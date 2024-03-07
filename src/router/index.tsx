@@ -1,5 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
+import { About } from '../hamburger/About';
+import { Contact } from '../hamburger/Contact';
 import { ErrorPage } from '../hamburger/ErrorPage';
 import { Home } from '../hamburger/Home';
 import { Models, loaderPosts } from '../hamburger/Models';
@@ -23,7 +25,15 @@ export const router = createBrowserRouter([
         path: "/models",
         element: <Models />,
         loader: loaderPosts
-      }
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
     ]
   },
 ]);

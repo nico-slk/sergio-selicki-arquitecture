@@ -1,0 +1,72 @@
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: aqua;
+}
+
+.menu-closebutton-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.solid {
+    border: solid 1px wheat;
+}
+
+.btn-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    color: black;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    font-size: 48px;
+    margin-top: 10px;
+    transform: translate(+80%, 0px);
+    opacity: 0;
+    animation: item-slide 0.5s forwards ease-out;
+}
+
+@keyframes item-slide {
+    0% {
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
+.menu-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+@for $i from 1 to 6 {
+    $delay: ($i - 1) * 0.2;
+    .menu-item:nth-child(#{$i}) {
+        animation-delay: #{$delay}s;
+    }
+}

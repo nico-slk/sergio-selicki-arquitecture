@@ -25,10 +25,16 @@ export const Models = () => {
   console.log(posts);
 
   return (
-    <div>Models</div>
+    <div>
+      <p>Models</p>
+      {posts.map((post: Posts): JSX.Element => <div >
+        {post.id}
+      </div>)}
+    </div>
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const loaderPosts = async (): Promise<{
   posts: PostList;
 }> => {

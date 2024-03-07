@@ -1,21 +1,24 @@
 
+
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import './App.css';
+import './css/App.css';
 import { Portal } from './hamburger/Portal';
 
 function App(): JSX.Element {
-  const [modal, setModal] = useState(false);
+  const [isOpen, setModal] = useState(false);
 
   return (
     <>
-      <p className="read-the-docs">
-        APP
-      </p>
+      <div className="head">
+        <p>
+          APP
+        </p>
+        <button type="button" onClick={() => setModal(!isOpen)} className='btn-menu' >X</button>
+      </div>
       {/* Modal aca */}
-      <Portal isOpen={modal} />
+      <Portal isOpen={isOpen} setModal={setModal} />
       <Outlet />
-      <button type="button" onClick={() => setModal(!modal)}>X</button>
     </>
   );
 }
