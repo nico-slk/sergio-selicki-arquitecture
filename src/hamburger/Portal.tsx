@@ -9,18 +9,29 @@ interface Props {
 export const Portal = ({ isOpen, setModal }: Props) => {
 
   const modal: HTMLElement = document.getElementById("modal") as HTMLElement;
+  const keyframeAnimation = [
+    {
+      opacity: 1,
+      transform: "translate(0px, 0px)"
+    },
+    {
+      opacity: 0,
+      transform: "translate(+50%, 0px)"
+    },
+  ];
 
   if (!isOpen) {
-    modal.style.display = "none";
+    modal.animate(keyframeAnimation, 300);
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 250);
   } else {
-    modal.style.display = "block";
+    modal.style.display = "flex";
   }
 
-  return (
-    createPortal(
-      isOpen && <Hamburger isOpen={isOpen} setModal={setModal} />,
-      modal
-    )
+  return createPortal(
+    isOpen && <Hamburger isOpen={isOpen} setModal={setModal} />,
+    modal
   );
 
 };

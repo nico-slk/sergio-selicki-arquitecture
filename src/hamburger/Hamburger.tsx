@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 interface Props {
   isOpen: boolean;
@@ -11,6 +12,7 @@ interface NavStyle {
 }
 
 export const Hamburger = ({ isOpen, setModal }: Props) => {
+  const [toggleModal, setToggleMenu] = useState("menu-container");
 
   const activeStyle = (data: NavStyle) => {
     return {
@@ -19,18 +21,27 @@ export const Hamburger = ({ isOpen, setModal }: Props) => {
     };
   };
 
-  const serModalFalse = () => setModal(!isOpen);
+  const serModalFalse = () => {
+    setToggleMenu("hide-modal");
+
+    setModal(!isOpen);
+  };
+
+  useEffect(() => {
+  }, [toggleModal]);
 
 
   return (
-    <div className="menu-container">
-      <div className='menu-closebutton-container'>
-        <button type="button" onClick={serModalFalse} className='btn-menu' >X</button>
+    <div className={`${toggleModal}`}>
+      {/* <div className='menu-closebutton-container'>
 
-      </div>
+      </div> */}
       <div className='menu-list-container'>
 
         <ul className='menu-list'>
+          <li className='menu-item'>
+            <button type="button" onClick={serModalFalse} className='btn-menu' >X</button>
+          </li>
           <li className='menu-item'>
             <NavLink to="/" style={activeStyle} onClick={serModalFalse} >Home</NavLink>
           </li>
