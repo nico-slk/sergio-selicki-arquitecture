@@ -40,9 +40,6 @@ export const Hamburger = ({ isOpen, setModal }: Props) => {
 
         <ul className='menu-list'>
           <li className='menu-item'>
-            <button type="button" onClick={serModalFalse} className='btn-menu' >X</button>
-          </li>
-          <li className='menu-item'>
             <NavLink to="/" style={activeStyle} onClick={serModalFalse} >Home</NavLink>
           </li>
           <li className='menu-item'>

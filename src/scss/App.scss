@@ -2,39 +2,36 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 40px 80px;
 }
 
 .menu-container {
+    width: 500px;
+    min-width: 480px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-// .menu-closebutton-container {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: flex-end;
-// }
-
-.solid {
-    border: solid 1px wheat;
+.menu-list {
+    padding: 100px 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .btn-menu {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
-    justify-items: center;
-    text-align: center;
-    width: 50px;
-    height: 50px;
+    align-self: flex-end;
+    height: 100%;
     font-size: 24px;
-    color: black;
-}
-
-.menu-list {
-    display: flex;
-    flex-direction: column;
+    color: rgb(255, 255, 255);
+    background: none;
+    border: none;
+    font-size: 48px;
+    z-index: 1;
 }
 
 .menu-item {
@@ -42,7 +39,6 @@
     flex-direction: column;
     justify-content: center;
     height: 50px;
-    max-width: 500px;
     font-size: 48px;
     margin-top: 10px;
     transform: translate(+80%, 0px);
@@ -64,7 +60,7 @@
     margin-bottom: 20px;
 }
 
-@for $i from 1 to 7 {
+@for $i from 1 to 6 {
     $delay: ($i - 0.1) * 0.2;
     .menu-item:nth-child(#{$i}) {
         animation-delay: #{$delay}s;
