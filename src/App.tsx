@@ -3,8 +3,8 @@
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
-// import './css/App.css';
+import { Link, Outlet } from 'react-router-dom';
+import './css/App.css';
 import { Portal } from './hamburger/Portal';
 
 function App(): JSX.Element {
@@ -17,19 +17,17 @@ function App(): JSX.Element {
   };
 
   return (
-    <>
+    <div className='app'>
       <div className="head">
-        <p>
-          APP
-        </p>
+        <Link to="/" className='link' >App</Link>
         <button type="button" onClick={handleMenuClick} className='btn-menu' >
           {iconX ? <FontAwesomeIcon icon={faX} /> : <FontAwesomeIcon icon={faBars} />}
         </button>
       </div>
       {/* Modal aca */}
-      <Portal isOpen={isOpen} setModal={setModal} />
+      <Portal isOpen={isOpen} setModal={setModal} openCloseButtonFn={setIconX} />
       <Outlet />
-    </>
+    </div>
   );
 }
 

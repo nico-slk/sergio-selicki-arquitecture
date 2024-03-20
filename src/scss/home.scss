@@ -1,0 +1,41 @@
+.tab-container {
+    width: 98vw;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.tab-list {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.tab-list-item {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tab-list-item:hover {
+    background-color: aqua;
+}
+
+.tab-navlink {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+}
+
+.tab-navlink:hover {
+    color: red;
+}

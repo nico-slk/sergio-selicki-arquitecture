@@ -5,9 +5,10 @@ import { Hamburger } from './Hamburger';
 interface Props {
   isOpen: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  openCloseButtonFn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Portal = ({ isOpen, setModal }: Props) => {
+export const Portal = ({ isOpen, setModal, openCloseButtonFn }: Props) => {
   const firstRender = useRef(true);
   const modal: HTMLElement = document.getElementById("modal") as HTMLElement;
   const keyframeAnimation = [
@@ -20,6 +21,7 @@ export const Portal = ({ isOpen, setModal }: Props) => {
       transform: "translate(+50%, 0px)"
     },
   ];
+
   useEffect(() => {
 
     if (!firstRender.current) {
@@ -28,6 +30,7 @@ export const Portal = ({ isOpen, setModal }: Props) => {
         setTimeout(() => {
           modal.style.display = "none";
         }, 250);
+        openCloseButtonFn(false);
       } else {
         modal.style.display = "flex";
       }

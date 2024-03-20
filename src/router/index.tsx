@@ -20,28 +20,16 @@ export const router = createBrowserRouter([
           {
             index: true,
             element: <>Hola</>,
-          }
-        ]
-      },
-      {
-        path: "/projects",
-        element: <Projects />,
-        children: [
+          },
           {
-            index: true,
-            element: <>Hola</>,
-          }
-        ]
-      },
-      {
-        path: "/models",
-        element: <Models />,
-        loader: loaderPosts,
-        children: [
+            path: "projects",
+            element: <Projects />,
+          },
           {
-            index: true,
-            element: <>Hola</>,
-          }
+            path: "models",
+            element: <Models />,
+            loader: loaderPosts,
+          },
         ]
       },
       {

@@ -1,10 +1,8 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  background-color: #e25e5e;
+  width: 98vw;
+  background-color: #f08080;
 }
 
 .head {
@@ -12,6 +10,15 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 40px 80px;
+}
+
+.link {
+  color: red;
+  text-decoration: none;
+}
+
+.tab-navlink {
+  text-decoration: none;
 }
 
 .menu-container {
