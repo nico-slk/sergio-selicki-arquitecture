@@ -1,3 +1,5 @@
+import { faX } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 interface Props {
@@ -34,7 +36,9 @@ export const Hamburger = ({ isOpen, setModal }: Props) => {
   return (
     <div className={`${toggleModal}`}>
       <div className='menu-list-container'>
-
+        <button type="button" onClick={serModalFalse} className='btn-menu-close' >
+          <FontAwesomeIcon icon={faX} />
+        </button>
         <ul className='menu-list'>
           <li className='menu-item'>
             <NavLink to="/" style={activeStyle} onClick={serModalFalse} >Home</NavLink>

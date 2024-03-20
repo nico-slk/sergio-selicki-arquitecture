@@ -1,6 +1,6 @@
 
 
-import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
@@ -21,7 +21,7 @@ function App(): JSX.Element {
       <div className="head">
         <Link to="/" className='link' >App</Link>
         <button type="button" onClick={handleMenuClick} className='btn-menu' >
-          {iconX ? <FontAwesomeIcon icon={faX} /> : <FontAwesomeIcon icon={faBars} />}
+          <FontAwesomeIcon icon={faBars} />
         </button>
       </div>
       {/* Modal aca */}
