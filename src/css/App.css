@@ -1,3 +1,12 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: #e25e5e;
+}
+
 .head {
   display: flex;
   flex-direction: row;

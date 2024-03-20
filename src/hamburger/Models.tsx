@@ -1,4 +1,6 @@
-import { useLoaderData } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
+import '../css/main.css';
+import { Epic } from './Epic';
 
 interface PostList {
   posts: Posts[];
@@ -22,12 +24,13 @@ interface Posts {
 export const Models = () => {
 
   const { posts } = useLoaderData() as PostList;
-  console.log(posts);
 
   return (
-    <div>
-      <p>Models</p>
-      {posts.map((post: Posts): JSX.Element => <div >
+    <div className='main'>
+      <h1>Models</h1>
+      <Epic message={`Hola esto es un mensaje en el head de Models`} />
+      <Outlet />
+      {posts.map((post: Posts): JSX.Element => <div key={post.id} >
         {post.id}
       </div>)}
     </div>

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Hamburger } from './Hamburger';
 
@@ -7,7 +8,7 @@ interface Props {
 }
 
 export const Portal = ({ isOpen, setModal }: Props) => {
-
+  const firstRender = useRef(true);
   const modal: HTMLElement = document.getElementById("modal") as HTMLElement;
   const keyframeAnimation = [
     {
@@ -19,15 +20,24 @@ export const Portal = ({ isOpen, setModal }: Props) => {
       transform: "translate(+50%, 0px)"
     },
   ];
+  useEffect(() => {
 
-  if (!isOpen) {
-    modal.animate(keyframeAnimation, 300);
-    setTimeout(() => {
+    if (!firstRender.current) {
+      if (!isOpen) {
+        modal.animate(keyframeAnimation, 300);
+        setTimeout(() => {
+          modal.style.display = "none";
+        }, 250);
+      } else {
+        modal.style.display = "flex";
+      }
+    } else {
+      firstRender.current = false;
       modal.style.display = "none";
-    }, 250);
-  } else {
-    modal.style.display = "flex";
-  }
+    }
+
+  }, [isOpen]);
+
 
   return createPortal(
     isOpen && <Hamburger isOpen={isOpen} setModal={setModal} />,

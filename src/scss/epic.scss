@@ -1,0 +1,22 @@
+.epic {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+.message-container {
+    display: flex;
+    padding: 100px 60px;
+}
+
+.message {
+    margin: 0;
+    padding: 0;
+    width: 880px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 72px;
+    color: #000;
+    text-align: left;
+    // border: solid 2px black;
+}

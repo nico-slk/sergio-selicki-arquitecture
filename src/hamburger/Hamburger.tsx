@@ -33,9 +33,6 @@ export const Hamburger = ({ isOpen, setModal }: Props) => {
 
   return (
     <div className={`${toggleModal}`}>
-      {/* <div className='menu-closebutton-container'>
-
-      </div> */}
       <div className='menu-list-container'>
 
         <ul className='menu-list'>

@@ -14,25 +14,55 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
+        path: "/",
         element: <Home />,
+        children: [
+          {
+            index: true,
+            element: <>Hola</>,
+          }
+        ]
       },
       {
         path: "/projects",
         element: <Projects />,
+        children: [
+          {
+            index: true,
+            element: <>Hola</>,
+          }
+        ]
       },
       {
         path: "/models",
         element: <Models />,
-        loader: loaderPosts
+        loader: loaderPosts,
+        children: [
+          {
+            index: true,
+            element: <>Hola</>,
+          }
+        ]
       },
       {
         path: "/about",
-        element: <About />
+        element: <About />,
+        children: [
+          {
+            index: true,
+            element: <>Hola</>,
+          }
+        ]
       },
       {
         path: "/contact",
-        element: <Contact />
+        element: <Contact />,
+        children: [
+          {
+            index: true,
+            element: <>Hola</>,
+          }
+        ]
       },
     ]
   },
